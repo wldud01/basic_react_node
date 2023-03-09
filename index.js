@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const app = express();
 const port = 5000; // back server
@@ -8,6 +9,21 @@ const bodyParser = require("body-parser");
 
 // database 비밀 설정
 const config = require('./config/key');
+=======
+const express = require('express')
+const app = express()
+const port = 5000 // back server
+
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://yunjiyeong0106:password@firstmongo.6dthoaz.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+>>>>>>> 8e813d718aaf585637818103017d223722665a94
 
 
 /** Database setting MongoDB */
